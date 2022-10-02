@@ -1,0 +1,20 @@
+GENERAL:
+  TODO: Login
+
+SUMMARY
+  TODO: Hide by default and show when clicking a button
+  TODO: Show depending on the user
+
+ADD NEW
+  TODO: Select for which user you want to add the transaction (Cesar or Emilio)
+  TODO: Create user column in the database OR different database for a different user - ???
+  TODO: Notes when adding a new amount (not mandatory)
+  TODO: Delete transactions
+
+CONSULT
+  TODO: Ask for which user you want to see the data
+  TODO: Add title with the user name (no new column on table because that's innecessary)
+  TODO: Not show again when clicking the button twice
+  TODO: Show in modal window
+  TODO: Show only X number of transactions
+  TODO: Make number of transactions selectable
