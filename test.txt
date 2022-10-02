@@ -1,3 +1,4 @@
 Test file to try out github!
 WHAT!
 Second line added later
+This is a line added to the test branch
