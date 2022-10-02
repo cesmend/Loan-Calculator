@@ -12,19 +12,19 @@ const app = express(); //create an variable that uses express
 // add a port so that it doesn't use one arbitrarily, callback is a message about listening (console log)
 app.listen(3000, () => console.log("listening at 3000"));
 
-// ------------------ TODO: PASSWORD PROTECTION ------------------
+// ********************* TODO: PASSWORD PROTECTION *********************
 
-// ------------------ HOSTING ------------------
+// ********************* HOSTING *********************
 //use express to host static files for the server
 app.use(express.static("public")); //the static files that will be served are in the public folder of this server
 app.use(express.json({ limit: "1mb" })); //limit the size of the json input in the server
 
-// ------------------ DATABASE ------------------
+// ********************* DATABASE *********************
 //give the database a path to where it is
 const database = new Datastore("transactions.db"); //in this case root folder in the file transactions.db
 database.loadDatabase(); //load or create (if it was not there before)
 
-// ------------------ REQUEST HANDLING ------------------
+// ********************* REQUEST HANDLING *********************
 // POST
 //setup a route (I want to receive the post in /api)
 //setup a callback by creating a function that has request and response as parameteres

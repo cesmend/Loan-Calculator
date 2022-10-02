@@ -6,15 +6,21 @@ const btnSubmit = document.querySelector(".btn-submit");
 const msg = document.querySelector(".message");
 const btnRead = document.querySelector(".btn-read");
 const table = document.querySelector(".table");
-const intRate = 0.065;
+const intRate = 0.065; //since July 2022, before it was 0.07
 
 // ********************* SUMMARY *********************
-// ON PAGE LOAD SHOW THE LATEST TOTAL AND INTEREST
+// When page loads, call an asynchronous function that
+// waits (await) for the result of the fetch to /api route and puts that result in a variable
+// that variable is converted to json and when that result is available (await), put it in a variable
 window.onload = async function () {
   const totresponse = await fetch("/api");
   const totdata = await totresponse.json();
-  totalActual.textContent = totdata[totdata.length - 1].total;
-  interestActual.textContent = totdata[totdata.length - 1].interes;
+
+  //add the latest result to the Summary section
+  totalActual.textContent = numberWithCommas(totdata[totdata.length - 1].total);
+  interestActual.textContent = numberWithCommas(
+    totdata[totdata.length - 1].interes
+  );
 };
 
 // ********************* NEW TRANSACTION *********************
@@ -22,7 +28,9 @@ window.onload = async function () {
 btnSubmit.addEventListener("click", async function () {
   // ASK TO CONFIRM
   const confirmPrompt = confirm(
-    `Seguro que deseas agregar el monto?\nMonto: ${amount.value} soles`
+    `Seguro que deseas agregar el monto?\nMonto: ${numberWithCommas(
+      amount.value
+    )} soles`
   );
 
   if (amount.value && !isNaN(amount.value) && confirmPrompt) {
@@ -94,9 +102,14 @@ btnRead.addEventListener("click", async function () {
     const tbodytrtd3 = tbodytr.appendChild(document.createElement("td"));
     const tbodytrtd4 = tbodytr.appendChild(document.createElement("td"));
     // append the data
-    tbodytrtd1.append(data[i].amount);
-    tbodytrtd2.append(data[i].total);
-    tbodytrtd3.append(data[i].interes);
+    tbodytrtd1.append(numberWithCommas(data[i].amount));
+    tbodytrtd2.append(numberWithCommas(data[i].total));
+    tbodytrtd3.append(numberWithCommas(data[i].interes));
     tbodytrtd4.append(new Date(data[i].timestamp).toLocaleString());
   }
 });
+
+// ********************* FUNCTIONS *********************
+function numberWithCommas(x) {
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
