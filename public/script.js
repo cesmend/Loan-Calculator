@@ -28,9 +28,9 @@ window.onload = async function () {
 btnSubmit.addEventListener("click", async function () {
   // ASK TO CONFIRM
   const confirmPrompt = confirm(
-    `Seguro que deseas agregar el monto?\nMonto: ${numberWithCommas(
+    `Seguro que deseas agregar el monto?\nMonto: S/ ${numberWithCommas(
       amount.value
-    )} soles`
+    )}`
   );
 
   //amount has a value, is a number and confirmation is "yes"
@@ -61,7 +61,6 @@ btnSubmit.addEventListener("click", async function () {
 
     //CLEANUP AND RELOAD
     amount.value = "";
-    // TODO: IMPROVE THIS SO THAT A RELOAD IS NOT NEEDED
     location.reload();
   } else if (confirmPrompt == false) {
     msg.textContent = "ENVIO CANCELADO";
