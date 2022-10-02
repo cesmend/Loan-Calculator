@@ -40,7 +40,8 @@ body {
 /* **********ADD NEW************** */
 
 .add-new-form {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
   gap: 2rem;
 }
@@ -78,6 +79,13 @@ body {
 .btn-read:hover,
 .btn-read:active {
   background-color: #4791b6;
+}
+
+.message {
+  text-align: center;
+  color: red;
+  font-weight: 500;
+  grid-column: 1/-1;
 }
 
 /* TABLE */

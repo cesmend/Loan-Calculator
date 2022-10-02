@@ -14,12 +14,12 @@ const intRate = 0.065; //since July 2022, before it was 0.07
 // that variable is converted to json and when that result is available (await), put it in a variable
 window.onload = async function () {
   const totresponse = await fetch("/api");
-  const totdata = await totresponse.json();
+  const totData = await totresponse.json();
 
   //add the latest result to the Summary section
-  totalActual.textContent = numberWithCommas(totdata[totdata.length - 1].total);
+  totalActual.textContent = numberWithCommas(totData[totData.length - 1].total);
   interestActual.textContent = numberWithCommas(
-    totdata[totdata.length - 1].interes
+    totData[totData.length - 1].interes
   );
 };
 
@@ -33,6 +33,7 @@ btnSubmit.addEventListener("click", async function () {
     )} soles`
   );
 
+  //amount has a value, is a number and confirmation is "yes"
   if (amount.value && !isNaN(amount.value) && confirmPrompt) {
     // GET THE LATEST TOTAL
     const totresponse = await fetch("/api");
