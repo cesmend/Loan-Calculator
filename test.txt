@@ -1,7 +1,0 @@
-Test file to try out github!
-WHAT!
-Second line added later
-CHANGE TO TEST EVERYTHING
-This is a line added to the test branch
-Test branch 2 edit
-CHANGE 2022-10-02
