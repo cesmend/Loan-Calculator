@@ -3,7 +3,6 @@
 //npm init
 //npm install express
 //npm install nedb
-//TEST
 
 //use the Express package via node and import it here:
 const express = require("express");
