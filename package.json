@@ -1,0 +1,21 @@
+{
+  "name": "loan-calculator",
+  "version": "1.0.0",
+  "description": "App for managing loans",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "loan",
+    "calculator",
+    "loan",
+    "calculator"
+  ],
+  "author": "Cesar Mendoza",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1",
+    "nedb": "^1.8.0"
+  }
+}
