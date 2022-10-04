@@ -3,7 +3,7 @@
 //npm init
 //npm install express
 //npm install nedb
-//TODO:Go through the code
+//TODO:Go through the code!
 
 const express = require("express"); //use the Express package via node and import it here:
 const Datastore = require("nedb"); //import nedb (the database package)
