@@ -3,6 +3,7 @@
 //npm init
 //npm install express
 //npm install nedb
+//npm install dotenv
 
 const express = require("express"); //use the Express package via node and import it here:
 const Datastore = require("nedb"); //import nedb (the database package)
