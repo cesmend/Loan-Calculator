@@ -12,7 +12,7 @@ const app = express(); //create an variable that uses express
 // add a port so that it doesn't use one arbitrarily, callback is a message about listening (console log)
 app.listen(3000, () => console.log("listening at 3000"));
 
-// ********************* TODO: PASSWORD PROTECTION *********************
+// ********************* PASSWORD PROTECTION *********************
 
 // ********************* HOSTING *********************
 //use express to host static files for the server
@@ -41,9 +41,6 @@ app.post("/api", (request, response) => {
 
 //GET
 app.get("/api", (request, response) => {
-  //test response
-  // response.json({ test: 123 });
-
   database
     .find({}) //query all the db
     .sort({ timestamp: 1 }) //order by timestamp
