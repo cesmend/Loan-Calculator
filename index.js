@@ -12,7 +12,8 @@ require("dotenv").config(); // load anything thats in the file .env in an enviro
 
 //listen through the port 3000 for me to access it through the browser (localhost:3000)
 // add a port so that it doesn't use one arbitrarily, callback is a message about listening (console log)
-app.listen(3000, () => console.log("listening at 3000"));
+const port = process.env.PORT || 3000;
+app.listen(port, () => console.log(`Starting server at ${port}`));
 
 // ********************* HOSTING *********************
 //use express to host static files for the server
