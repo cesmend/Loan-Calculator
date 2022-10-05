@@ -7,12 +7,11 @@
 const express = require("express"); //use the Express package via node and import it here:
 const Datastore = require("nedb"); //import nedb (the database package)
 const app = express(); //create an variable that uses express
+require("dotenv").config(); // load anything thats in the file .env in an environment variable
 
 //listen through the port 3000 for me to access it through the browser (localhost:3000)
 // add a port so that it doesn't use one arbitrarily, callback is a message about listening (console log)
 app.listen(3000, () => console.log("listening at 3000"));
-
-// ********************* PASSWORD PROTECTION *********************
 
 // ********************* HOSTING *********************
 //use express to host static files for the server
