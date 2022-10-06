@@ -1,2 +1,5 @@
 # Loan-Calculator
-Loan calculator repository
+
+Simple calculator that shows the total invested and the monthly interest (history and new transactions)
+
+Lang: Spanish
